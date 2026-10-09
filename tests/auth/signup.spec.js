@@ -32,4 +32,24 @@ test.describe("/signup validation", () => {
     await loginPage.startSignup(user.name, process.env.EMAIL);
     await expect(loginPage.existingEmailError).toBeVisible();
   });
+
+  test("register and delete user account successfully", async ({
+    homePage,
+    loginPage,
+    signupPage,
+  }) => {
+    const user = createUser();
+
+    await homePage.goto();
+    await homePage.openLoginPage();
+    await loginPage.startSignup(user.name, user.email);
+    await signupPage.register(user);
+    await expect(signupPage.accountCreated).toBeVisible();
+
+    await signupPage.clickContinue();
+    await expect(homePage.loggedInAsUser(user.name)).toBeVisible();
+
+    await homePage.deleteAccount();
+    await expect(homePage.accountDeleted).toBeVisible();
+  });
 });
