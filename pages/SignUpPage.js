@@ -1,5 +1,5 @@
 // pages/SignupPage.js
-export class SignupPage {
+export class SignUpPage {
   constructor(page) {
     this.page = page;
 
