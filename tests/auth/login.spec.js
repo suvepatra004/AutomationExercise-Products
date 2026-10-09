@@ -1,0 +1,23 @@
+import { test, expect } from "../../fixtures/PageFixture.js";
+
+test.describe("/login page validation", () => {
+  test("Login with valid credentials", async ({
+    homePage,
+    loginPage,
+    page,
+  }) => {
+    await homePage.goto();
+    await homePage.openLoginPage();
+
+    await loginPage.login(process.env.EMAIL, process.env.PASSWORD);
+    await expect(homePage.loggedInAsUser(process.env.LOGIN_NAME)).toBeVisible();
+    await page.waitForTimeout(3000);
+  });
+  test("Login with Invalid credentials", async ({ homePage, loginPage }) => {
+    await homePage.goto();
+    await homePage.openLoginPage();
+
+    await loginPage.login("raj@demo.com", "suvh89");
+    await expect(loginPage.errorMessage).toBeVisible();
+  });
+});
