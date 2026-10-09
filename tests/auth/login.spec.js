@@ -9,9 +9,8 @@ test.describe("/login page validation", () => {
     await homePage.goto();
     await homePage.openLoginPage();
 
-    await loginPage.login(process.env.EMAIL, process.env.PASSWORD);
+    await loginPage.login(process.env.LOGIN_EMAIL, process.env.LOGIN_PASSWORD);
     await expect(homePage.loggedInAsUser(process.env.LOGIN_NAME)).toBeVisible();
-    await page.waitForTimeout(3000);
   });
   test("Login with Invalid credentials", async ({ homePage, loginPage }) => {
     await homePage.goto();
@@ -24,7 +23,7 @@ test.describe("/login page validation", () => {
     await homePage.goto();
     await homePage.openLoginPage();
 
-    await loginPage.login(process.env.EMAIL, process.env.PASSWORD);
+    await loginPage.login(process.env.LOGIN_EMAIL, process.env.LOGIN_PASSWORD);
     await expect(homePage.loggedInAsUser(process.env.LOGIN_NAME)).toBeVisible();
 
     await homePage.logout();

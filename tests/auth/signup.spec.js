@@ -29,7 +29,7 @@ test.describe("/signup validation", () => {
 
     await homePage.goto();
     await homePage.openLoginPage();
-    await loginPage.startSignup(user.name, process.env.EMAIL);
+    await loginPage.startSignup(user.name, process.env.LOGIN_EMAIL);
     await expect(loginPage.existingEmailError).toBeVisible();
   });
 

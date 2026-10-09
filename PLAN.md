@@ -19,9 +19,9 @@ Target site: automationexercise.com
 ## Phase 2 — Clicking, typing, and finding things on a page
 
 - [x] Locator strategy understood — role/text-based preferred over CSS/XPath, and why
-- [ ] Form interactions practiced: fill, click, select
-- [ ] Signup flow test
-- [ ] Login flow test, both correct and incorrect credentials
+- [x] Form interactions practiced: fill, click, select
+- [x] Signup flow test
+- [x] Login flow test, both correct and incorrect credentials
 
 **Checkpoint:** you can get a real form filled out and submitted by code.
 
