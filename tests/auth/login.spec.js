@@ -17,7 +17,17 @@ test.describe("/login page validation", () => {
     await homePage.goto();
     await homePage.openLoginPage();
 
-    await loginPage.login("raj@demo.com", "suvh89");
+    await loginPage.login(`nouser_${Date.now()}@test.com`, "suvh89");
     await expect(loginPage.errorMessage).toBeVisible();
+  });
+  test("logout validation", async ({ homePage, loginPage, page }) => {
+    await homePage.goto();
+    await homePage.openLoginPage();
+
+    await loginPage.login(process.env.EMAIL, process.env.PASSWORD);
+    await expect(homePage.loggedInAsUser(process.env.LOGIN_NAME)).toBeVisible();
+
+    await homePage.logout();
+    await expect(page).toHaveURL(/\/login$/);
   });
 });

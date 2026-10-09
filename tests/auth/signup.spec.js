@@ -19,4 +19,17 @@ test.describe("/signup validation", () => {
     await expect(signupPage.accountCreated).toBeVisible();
     await page.waitForTimeout(3000);
   });
+
+  test("Already exists user validation", async ({
+    homePage,
+    loginPage,
+    page,
+  }) => {
+    const user = createUser();
+
+    await homePage.goto();
+    await homePage.openLoginPage();
+    await loginPage.startSignup(user.name, process.env.EMAIL);
+    await expect(loginPage.existingEmailError).toBeVisible();
+  });
 });
