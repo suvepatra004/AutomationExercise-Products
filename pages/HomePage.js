@@ -9,6 +9,19 @@ export class HomePage {
     });
     this.accountDeleted = page.getByText("Account Deleted!");
     this.loggedInAs = page.getByText("Logged in as");
+
+    this.homeLink = page.getByRole("link", { name: "Home" });
+    this.productsLink = page.getByRole("link", { name: "Products" });
+    this.cartLink = page.getByRole("link", { name: "Cart" });
+    this.testCasesLink = page.getByRole("link", {
+      name: "Test Cases",
+      exact: true,
+    });
+    this.apiTestingLink = page.getByRole("link", { name: "API Testing" });
+    this.videoTutorialsLink = page.getByRole("link", {
+      name: "Video Tutorials",
+    });
+    this.contactUsLink = page.getByRole("link", { name: "Contact us" });
   }
 
   async goto() {
