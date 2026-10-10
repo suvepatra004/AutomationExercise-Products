@@ -47,4 +47,8 @@ export class ProductPage {
     this.kidsCategory = page.getByRole("link", { name: "Kids" });
     this.brandsTitle = page.getByRole("heading", { name: "Brands" });
   }
+
+  async goto() {
+    await this.page.goto("/products");
+  }
 }
