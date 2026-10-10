@@ -147,12 +147,12 @@ This value is defined in `playwright.config.js` and can be overridden with the `
 
 The project reads environment variables from `.env` through `dotenv/config` in `playwright.config.js`.
 
-| Name | Description | Required | Default / Example |
-| --- | --- | --- | --- |
-| `BASE_URL` | Base URL for the site under test | Optional | `https://automationexercise.com` |
-| `LOGIN_EMAIL` | Email used by login tests | Required for login scenarios | `user@example.com` |
-| `LOGIN_PASSWORD` | Password used by login tests | Required for login scenarios | `your-password` |
-| `LOGIN_NAME` | Expected display name used after successful login | Required for login scenarios | `Example User` |
+| Name             | Description                                       | Required                     | Default / Example                |
+| ---------------- | ------------------------------------------------- | ---------------------------- | -------------------------------- |
+| `BASE_URL`       | Base URL for the site under test                  | Optional                     | `https://automationexercise.com` |
+| `LOGIN_EMAIL`    | Email used by login tests                         | Required for login scenarios | `user@example.com`               |
+| `LOGIN_PASSWORD` | Password used by login tests                      | Required for login scenarios | `your-password`                  |
+| `LOGIN_NAME`     | Expected display name used after successful login | Required for login scenarios | `Example User`                   |
 
 ## Usage
 
@@ -185,7 +185,12 @@ The project uses a default browser configuration in `playwright.config.js` and w
 Example flow covered by the suite:
 
 ```text
-Home page -> Login page -> enter credentials -> verify Logged in as <name> -> logout -> confirm login page is shown
+-> Home page
+-> Login page
+-> enter credentials
+-> verify Logged in as <name>
+-> logout
+-> confirm login page is shown
 ```
 
 ## API Reference

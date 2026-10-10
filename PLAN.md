@@ -11,14 +11,14 @@ Target site: automationexercise.com
 - [x] Playwright project initialized, browsers installed
 - [x] Auto-generated project structure understood (`tests/`, `playwright.config.js`)
 - [x] First test: homepage loads correctly
-- [x] Headed run observed — actually watched the browser act
+- [x] Headed run observed actually watched the browser act
 - [x] Headless run compared against the headed one
 
 **Checkpoint:** you've seen Playwright open a real browser and interact with a real page.
 
 ## Phase 2 — Clicking, typing, and finding things on a page
 
-- [x] Locator strategy understood — role/text-based preferred over CSS/XPath, and why
+- [x] Locator strategy understood role/text-based preferred over CSS/XPath, and why
 - [x] Form interactions practiced: fill, click, select
 - [x] Signup flow test
 - [x] Login flow test, both correct and incorrect credentials
@@ -27,7 +27,7 @@ Target site: automationexercise.com
 
 ## Phase 3 — Waiting for things properly
 
-- [ ] Playwright's auto-waiting behavior understood — why manual `sleep` is rarely needed
+- [ ] Playwright's auto-waiting behavior understood why manual `sleep` is rarely needed
 - [ ] Web-first assertions understood (`toBeVisible()`, `toHaveText()`) and why they fit a page that changes over time
 - [ ] Product search test
 - [ ] Add-to-cart test, including the cart count updating
@@ -47,7 +47,7 @@ Target site: automationexercise.com
 
 - [ ] `projects` config in `playwright.config.js` understood
 - [ ] Full suite run across Chromium, Firefox, and WebKit
-- [ ] (Optional) GitHub Actions workflow added — browser install step required this time, unlike the API project
+- [ ] (Optional) GitHub Actions workflow added browser install step required this time, unlike the API project
 
 **Checkpoint:** one command runs your whole suite on three browsers, not just one.
 
@@ -57,7 +57,7 @@ Target site: automationexercise.com
 - [ ] Negative tests added: invalid signup data, checkout attempted with an empty cart
 - [ ] Cleanup pass across everything above
 
-**Checkpoint:** this project is "done" — not polished, just functionally complete. Time to move to Shopify.
+**Checkpoint:** this project is "done" not polished, just functionally complete. Time to move to Shopify.
 
 ## What comes after this project
 
