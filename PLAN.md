@@ -40,9 +40,9 @@ This project provides a learning environment for Playwright UI automation agains
 | ------- | ----------------------------------------- | ------------------ | ----------- |
 | Phase 1 | Initial browser automation baseline       | 5 / 5              | Complete    |
 | Phase 2 | Form interaction and authentication flows | 4 / 4              | Complete    |
-| Phase 3 | Waiting strategy and web-first assertions | 0 / 4              | Not Started |
-| Phase 4 | Page Object Model                         | 0 / 4              | Not Started |
-| Phase 5 | Cross-browser and CI execution            | 0 / 3              | Not Started |
+| Phase 3 | Waiting strategy and web-first assertions | 1 / 4              | In Progress |
+| Phase 4 | Page Object Model                         | 1 / 4              | In Progress |
+| Phase 5 | Cross-browser and CI execution            | 1 / 3              | Not Started |
 | Phase 6 | Capstone flow and edge cases              | 0 / 3              | Not Started |
 
 ## Phase Details
@@ -94,7 +94,7 @@ This project provides a learning environment for Playwright UI automation agains
 - **Tasks**:
   - [x] Validate the Page Object Model as the UI equivalent of the service layer used in the API project.
   - [ ] Build page classes for `HomePage`, `LoginPage`, `SignupPage`, `ProductsPage`, and `CartPage`.
-  - [ ] Confirm all tests use page objects instead of raw locators (built this way from the start, so no rewrite is needed).
+  - [ ] Confirm all tests using page objects instead of raw locators (built this way from the start, so no rewrite is needed).
   - [ ] Implement one end-to-end flow using page objects only: search, add to cart, and view cart.
 - **Exit Criteria**: Test files read like scenario definitions and the browser-specific details are centralized in page classes.
 - **Deliverables**:

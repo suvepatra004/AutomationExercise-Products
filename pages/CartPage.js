@@ -32,4 +32,8 @@ export class CartPage {
     });
     this.clickHereLink = page.getByRole("link", { name: "here" });
   }
+
+  async goto() {
+    await this.page.goto("/view_cart");
+  }
 }

@@ -51,4 +51,25 @@ export class ProductPage {
   async goto() {
     await this.page.goto("/products");
   }
+
+  async productCard(name) {
+    return this.page.productCards.filter({
+      has: this.page.getByText(name, { exact: true }),
+    });
+  }
+
+  async search(productName) {
+    await this.page.searchInput.fill(productName);
+    await this.page.searchButton.click();
+  }
+
+  async addToCart(productName) {}
+
+  async viewProduct(productName) {
+    const productCard = this.page.productCards.filter({
+      has: this.page.productName,
+    });
+
+    await productCard.viewProductButtons.click();
+  }
 }
