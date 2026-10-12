@@ -82,7 +82,7 @@ This project provides a learning environment for Playwright UI automation agains
   - [ ] Validate Playwright auto-waiting behavior and document why manual `sleep` is rarely required.
   - [x] Validate web-first assertions such as `toBeVisible()` and `toHaveText()` for dynamic page states.
   - [ ] Implement product search test.
-  - [ ] Implement add-to-cart test, including cart count validation.
+  - [ ] Implement add-to-cart test.
 - **Exit Criteria**: Tests remain stable when page loads or UI updates occur within the normal timing envelope.
 - **Deliverables**:
   - Search flow tests
@@ -92,20 +92,20 @@ This project provides a learning environment for Playwright UI automation agains
 
 - **Goal**: Encapsulate selector logic and browser actions behind reusable page classes to improve maintainability and readability.
 - **Tasks**:
-  - [ ] Validate the Page Object Model as the UI equivalent of the service layer used in the API project.
-  - [ ] Build page classes for `HomePage`, `LoginPage`, `ProductsPage`, and `CartPage`.
-  - [ ] Rewrite earlier tests to use page objects instead of raw locators.
+  - [x] Validate the Page Object Model as the UI equivalent of the service layer used in the API project.
+  - [ ] Build page classes for `HomePage`, `LoginPage`, `SignupPage`, `ProductsPage`, and `CartPage`.
+  - [ ] Confirm all tests use page objects instead of raw locators (built this way from the start, so no rewrite is needed).
   - [ ] Implement one end-to-end flow using page objects only: search, add to cart, and view cart.
 - **Exit Criteria**: Test files read like scenario definitions and the browser-specific details are centralized in page classes.
 - **Deliverables**:
-  - `HomePage`, `LoginPage`, `ProductsPage`, and `CartPage` page classes
-  - Refactored tests using the page object pattern
+  - `HomePage`, `LoginPage`, `SignupPage`, `ProductsPage`, and `CartPage` page classes
+  - Tests using the page object pattern
 
 ### Phase 5: Cross-browser and CI execution
 
 - **Goal**: Confirm that the suite can run across the configured browser matrix and in CI with the required browser installation steps.
 - **Tasks**:
-  - [ ] Review the `projects` configuration in `playwright.config.js`.
+  - [x] Review the `projects` configuration in `playwright.config.js`.
   - [ ] Run the full suite across Chromium, Firefox, and WebKit.
   - [ ] Add or validate the GitHub Actions workflow, including the Playwright browser install step required for CI.
 - **Exit Criteria**: A single command executes the suite across the configured project matrix, and CI continues to run the browser-based checks reliably.
@@ -114,6 +114,16 @@ This project provides a learning environment for Playwright UI automation agains
   - CI workflow for automated execution
 
 ### Phase 6: Capstone flow and edge cases
+
+- **Goal**: Close the practice project with end-to-end coverage of the primary flow and representative regression scenarios.
+- **Tasks**:
+  - [ ] Automate the complete flow: browse, add to cart, and reach the checkout UI without processing real payment.
+  - [ ] Add negative tests for invalid signup data and checkout attempts with an empty cart.
+  - [ ] Complete a cleanup pass across earlier phases to ensure consistent coverage and stability.
+- **Exit Criteria**: The practice project is functionally complete without requiring polish beyond the learning objective, and the project is ready to transition to the Shopify follow-on effort.
+- **Deliverables**:
+  - End-to-end flow coverage
+  - Negative test coverage for high-risk or invalid user input paths
 
 - **Goal**: Close the practice project with end-to-end coverage of the primary flow and representative regression scenarios.
 - **Tasks**:
