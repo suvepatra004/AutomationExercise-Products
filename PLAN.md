@@ -40,10 +40,12 @@ This project provides a learning environment for Playwright UI automation agains
 | ------- | ----------------------------------------- | ------------------ | ----------- |
 | Phase 1 | Initial browser automation baseline       | 5 / 5              | Complete    |
 | Phase 2 | Form interaction and authentication flows | 4 / 4              | Complete    |
-| Phase 3 | Waiting strategy and web-first assertions | 1 / 4              | In Progress |
-| Phase 4 | Page Object Model                         | 1 / 4              | In Progress |
-| Phase 5 | Cross-browser and CI execution            | 1 / 3              | Not Started |
+| Phase 3 | Waiting strategy and web-first assertions | 3 / 4              | In Progress |
+| Phase 4 | Page Object Model                         | 3 / 4              | In Progress |
+| Phase 5 | Cross-browser and CI execution            | 2 / 3              | In Progress |
 | Phase 6 | Capstone flow and edge cases              | 0 / 3              | Not Started |
+
+Current validation note: `npx playwright test --project=chromium` cannot collect the suite because tests request a `cartPage` fixture that is not registered in `fixtures/PageFixture.js`. The signup tests also still contain fixed 3-second waits. Firefox and WebKit projects are commented out in `playwright.config.js`, so cross-browser execution has not been validated.
 
 ## Phase Details
 
@@ -79,10 +81,10 @@ This project provides a learning environment for Playwright UI automation agains
 
 - **Goal**: Replace manual timing assumptions with Playwright-native wait and assertion patterns.
 - **Tasks**:
-  - [ ] Validate Playwright auto-waiting behavior and document why manual `sleep` is rarely required.
+  - [ ] Validate Playwright auto-waiting behavior and document why manual `sleep` is rarely required. Signup tests still use fixed 3-second waits.
   - [x] Validate web-first assertions such as `toBeVisible()` and `toHaveText()` for dynamic page states.
-  - [ ] Implement product search test.
-  - [ ] Implement add-to-cart test.
+  - [x] Implement product search tests in `tests/product/search.spec.js`.
+  - [x] Implement add-to-cart tests in `tests/product/addToCart.spec.js`; execution is currently blocked because `cartPage` is not registered in the shared fixture.
 - **Exit Criteria**: Tests remain stable when page loads or UI updates occur within the normal timing envelope.
 - **Deliverables**:
   - Search flow tests
@@ -94,7 +96,7 @@ This project provides a learning environment for Playwright UI automation agains
 - **Tasks**:
   - [x] Validate the Page Object Model as the UI equivalent of the service layer used in the API project.
   - [x] Build page classes for `HomePage`, `LoginPage`, `SignupPage`, `ProductsPage`, and `CartPage`.
-  - [ ] Confirm all tests using page objects instead of raw locators (built this way from the start, so no rewrite is needed).
+  - [x] Confirm all tests use page objects instead of raw locators (built this way from the start, so no rewrite is needed).
   - [ ] Implement one end-to-end flow using page objects only: search, add to cart, and view cart.
 - **Exit Criteria**: Test files read like scenario definitions and the browser-specific details are centralized in page classes.
 - **Deliverables**:
@@ -107,23 +109,13 @@ This project provides a learning environment for Playwright UI automation agains
 - **Tasks**:
   - [x] Review the `projects` configuration in `playwright.config.js`.
   - [ ] Run the full suite across Chromium, Firefox, and WebKit.
-  - [ ] Add or validate the GitHub Actions workflow, including the Playwright browser install step required for CI.
+  - [x] Add or validate the GitHub Actions workflow, including the Playwright browser install step required for CI.
 - **Exit Criteria**: A single command executes the suite across the configured project matrix, and CI continues to run the browser-based checks reliably.
 - **Deliverables**:
   - Cross-browser Playwright configuration
   - CI workflow for automated execution
 
 ### Phase 6: Capstone flow and edge cases
-
-- **Goal**: Close the practice project with end-to-end coverage of the primary flow and representative regression scenarios.
-- **Tasks**:
-  - [ ] Automate the complete flow: browse, add to cart, and reach the checkout UI without processing real payment.
-  - [ ] Add negative tests for invalid signup data and checkout attempts with an empty cart.
-  - [ ] Complete a cleanup pass across earlier phases to ensure consistent coverage and stability.
-- **Exit Criteria**: The practice project is functionally complete without requiring polish beyond the learning objective, and the project is ready to transition to the Shopify follow-on effort.
-- **Deliverables**:
-  - End-to-end flow coverage
-  - Negative test coverage for high-risk or invalid user input paths
 
 - **Goal**: Close the practice project with end-to-end coverage of the primary flow and representative regression scenarios.
 - **Tasks**:
@@ -163,3 +155,4 @@ The next phase is the Shopify Partner dev store project, which builds on the aut
 | Version | Date | Change                                                                                                                           |
 | ------- | ---- | -------------------------------------------------------------------------------------------------------------------------------- |
 | 1.0     | TBD  | Restructure the project plan into a standard, editable status tracker while preserving the original tasks and completion states. |
+| 1.1     | 2026-10-15 | Synchronize phase progress with the implemented product/cart tests and CI workflow; record current test-collection and cross-browser blockers. |
