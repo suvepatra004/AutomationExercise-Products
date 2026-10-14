@@ -93,7 +93,7 @@ This project provides a learning environment for Playwright UI automation agains
 - **Goal**: Encapsulate selector logic and browser actions behind reusable page classes to improve maintainability and readability.
 - **Tasks**:
   - [x] Validate the Page Object Model as the UI equivalent of the service layer used in the API project.
-  - [ ] Build page classes for `HomePage`, `LoginPage`, `SignupPage`, `ProductsPage`, and `CartPage`.
+  - [x] Build page classes for `HomePage`, `LoginPage`, `SignupPage`, `ProductsPage`, and `CartPage`.
   - [ ] Confirm all tests using page objects instead of raw locators (built this way from the start, so no rewrite is needed).
   - [ ] Implement one end-to-end flow using page objects only: search, add to cart, and view cart.
 - **Exit Criteria**: Test files read like scenario definitions and the browser-specific details are centralized in page classes.

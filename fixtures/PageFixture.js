@@ -5,6 +5,12 @@ import { SignUpPage } from "../pages/SignUpPage";
 import { ProductPage } from "../pages/ProductPage";
 
 export const test = base.extend({
+  // page: async ({ page }, use) => {
+  //   await page.route(/googlesyndication\.com|doubleclick\.net/, (route) =>
+  //     route.abort(),
+  //   );
+  //   await use(page);
+  // },
   loginPage: async ({ page }, use) => {
     await use(new LoginPage(page));
   },
